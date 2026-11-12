@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WARD-ED | SecureLock Global — Attendance Register</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ LOGIN / ROLE SELECTION ============ -->
+<div id="login-view" class="login-view">
+  <div class="login-card">
+    <div class="brand">
+      <div class="brand-logo">W</div>n
+      <div>
+        <h1>WARD-ED</h1>
+        <p class="brand-sub">SecureLock Global</p>
+      </div>
+    </div>
+    <p class="tagline">Workforce Attendance Reporting &amp; Exception Detection</p>
+
+    <h2>Sign in to your workspace</h2>
+    <p class="muted">Select your role to access the appropriate attendance dashboard.</p>
+
+    <div class="role-grid" id="role-grid">
+      <button class="role-card" data-role="hr">
+        <span class="role-icon">👤</span>
+        <span class="role-name">HR</span>
+        <span class="role-desc">Full visibility across departments and reports</span>
+      </button>
+      <button class="role-card" data-role="payroll">
+        <span class="role-icon">💰</span>
+        <span class="role-name">Payroll</span>
+        <span class="role-desc">Attendance, overtime and pay verification</span>
+      </button>
+      <button class="role-card" data-role="manager">
+        <span class="role-icon">👔</span>
+        <span class="role-name">Manager</span>
+        <span class="role-desc">Department attendance and exceptions</span>
+      </button>
+      <button class="role-card" data-role="finance">
+        <span class="role-icon">📊</span>
+        <span class="role-name">Finance</span>
+        <span class="role-desc">Labour cost and overtime reporting</span>
+      </button>
+    </div>
+
+    <button id="login-btn" class="btn btn-primary btn-block" disabled>Continue to Dashboard →</button>
+  </div>
+</div>
+
+<!-- ============ APP SHELL ============ -->
+<div id="app-view" class="app-view hidden">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo small">W</div>
+      <span>WARD-ED</span>
+    </div>
+    <nav id="side-nav"></nav>
+    <div class="sidebar-footer">
+      <span id="sidebar-role" class="role-badge"></span>
+      <button id="logout-btn" class="btn btn-ghost btn-sm">← Sign out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <h2 id="page-title">Dashboard</h2>
+      <div class="topbar-right">
+        <span class="date-chip" id="today-chip"></span>
+        <div class="avatar">ED</div>
+      </div>
+    </header>
+    <section id="page-content" class="page-content"></section>
+  </main>
+</div>
+
+<!-- ============ EXCEPTION REVIEW MODAL ============ -->
+<div id="modal-overlay" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Exception Details</h3>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
